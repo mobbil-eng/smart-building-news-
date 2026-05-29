@@ -28,15 +28,21 @@ KEYWORDS = [
 
 # RSS источники
 RSS_SOURCES = [
-    # Русскоязычные
-    'https://habr.com/feed/best/',
-    'https://lenta.ru/rss/',
+    # Русскоязычные - основные
     'https://www.cnews.ru/feed/',
+    'https://habr.com/feed/best/',
     'https://vc.ru/feed',
 
-    # Иностранные tech
+    # Русскоязычные - недвижимость и умные здания
+    'https://ujin.tech/feed/',
+    'https://digitaldeveloper.ru/feed/',
+    'https://www.kommersant.ru/rss/main',
+    'https://www.hitechbuilding.ru/rss',
+
+    # Иностранные - tech и smart buildings
     'https://feeds.arstechnica.com/arstechnica/index',
     'https://feeds2.techcrunch.com/techcrunch/',
+    'https://www.akoode.com/feed/',
 ]
 
 TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
