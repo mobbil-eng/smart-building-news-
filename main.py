@@ -107,19 +107,12 @@ def send_to_telegram(article):
 
     url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
 
-    message = f"""
-🏢 <b>{article['title']}</b>
-
-📰 <i>{article['source']}</i>
-
-<a href="{article['link']}">Читать полностью</a>
-"""
+    message = f"🏢 {article['title']}\n\n📰 {article['source']}\n\n{article['link']}"
 
     try:
         response = requests.post(url, json={
             'chat_id': TELEGRAM_CHAT_ID,
-            'text': message,
-            'parse_mode': 'HTML'
+            'text': message
         }, timeout=10)
 
         if response.status_code == 200:
@@ -127,6 +120,7 @@ def send_to_telegram(article):
             return True
         else:
             print(f"❌ Ошибка Telegram: {response.status_code}")
+            print(f"   Ответ: {response.text}")
             return False
     except Exception as e:
         print(f"❌ Ошибка отправки: {e}")
