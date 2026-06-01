@@ -61,9 +61,9 @@ def save_seen_articles(seen):
     with open(SEEN_FILE, 'w', encoding='utf-8') as f:
         json.dump(seen, f, ensure_ascii=False, indent=2)
 
-def get_article_hash(title, link):
-    """Создаёт уникальный хеш для статьи"""
-    return f"{urlparse(link).netloc}:{title}".lower().replace(' ', '').replace('\n', '')
+def get_article_id(link):
+    """Создаёт уникальный ID для статьи на основе ссылки"""
+    return link
 
 def matches_keywords(text):
     """Проверяет, совпадает ли текст с ключевыми словами"""
@@ -141,14 +141,14 @@ def main():
 
     sent_count = 0
     for article in articles:
-        article_hash = get_article_hash(article['title'], article['link'])
+        article_id = get_article_id(article['link'])
 
-        if article_hash in seen:
+        if article_id in seen:
             print(f"⏭️ Пропущено (уже отправлено): {article['title'][:40]}...")
             continue
 
         if send_to_telegram(article):
-            seen[article_hash] = article['fetched_at']
+            seen[article_id] = article['fetched_at']
             sent_count += 1
 
     save_seen_articles(seen)
