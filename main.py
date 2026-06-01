@@ -28,16 +28,21 @@ KEYWORDS = [
 
 # RSS источники
 RSS_SOURCES = [
-    # Русскоязычные - основные
+    # Русскоязычные - основные технологические
     'https://www.cnews.ru/feed/',
     'https://habr.com/feed/best/',
     'https://vc.ru/feed',
 
-    # Русскоязычные - недвижимость и умные здания
+    # Русскоязычные - деловые издания
+    'https://www.kommersant.ru/rss/main',
+    'https://www.vedomosti.ru/rss/news',
+    'https://www.rbc.ru/rss/business/',
+
+    # Русскоязычные - специализированные
     'https://ujin.tech/feed/',
     'https://digitaldeveloper.ru/feed/',
-    'https://www.kommersant.ru/rss/main',
     'https://www.hitechbuilding.ru/rss',
+    'https://comnews.ru/rss',
 
     # Иностранные - tech и smart buildings
     'https://feeds.arstechnica.com/arstechnica/index',
