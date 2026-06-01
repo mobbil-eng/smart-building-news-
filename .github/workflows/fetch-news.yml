@@ -2,7 +2,7 @@ name: Fetch Smart Building News
 
 on:
   schedule:
-    - cron: '0 9 * * *'  # Каждый день в 9:00 UTC
+    - cron: '0 6 * * *'  # Каждый день в 9:00 Moscow time (UTC+3)
   workflow_dispatch:  # Можно запустить вручную
 
 jobs:
