@@ -26,28 +26,17 @@ KEYWORDS = [
     'building automation'
 ]
 
-# RSS источники
+# RSS источники (реально работающие)
 RSS_SOURCES = [
-    # Русскоязычные - основные технологические
-    'https://www.cnews.ru/feed/',
-    'https://habr.com/feed/best/',
-    'https://vc.ru/feed',
-
-    # Русскоязычные - деловые издания
-    'https://www.kommersant.ru/rss/main',
-    'https://www.vedomosti.ru/rss/news',
-    'https://www.rbc.ru/rss/business/',
-
-    # Русскоязычные - специализированные
+    # Основной - специализированный на недвижимости и tech
     'https://ujin.tech/feed/',
-    'https://digitaldeveloper.ru/feed/',
-    'https://www.hitechbuilding.ru/rss',
-    'https://comnews.ru/rss',
 
-    # Иностранные - tech и smart buildings
+    # Иностранные tech-издания
     'https://feeds.arstechnica.com/arstechnica/index',
     'https://feeds2.techcrunch.com/techcrunch/',
-    'https://www.akoode.com/feed/',
+
+    # Добавь здесь другие работающие источники если найдешь
+    # Большинство русскоязычных RSS не работают из-за блокировок
 ]
 
 TELEGRAM_BOT_TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
